@@ -638,6 +638,16 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
+DewfordTown_EventScript_GIVE_HM03::
+    lock
+	faceplayer
+	goto_if_set 1 FLAG_RECEIVED_HM03, 
+	giveitem ITEM_HM03
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_HM03
+	release
+	end
+
 DewfordTown_Text_TinyIslandCommunity:
 	.string "DEWFORD is a tiny island community.\n"
 	.string "If something gets trendy here,\l"
