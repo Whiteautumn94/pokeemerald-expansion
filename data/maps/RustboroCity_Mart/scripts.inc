@@ -18,16 +18,22 @@ RustboroCity_Mart_EventScript_PokemartBasic::
 
 	.align 2
 RustboroCity_Mart_Pokemart_Basic:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_QUICK_CLAW
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_MIRACLE_SEED
+	.2byte ITEM_DRAGON_FANG
+	.2byte ITEM_MAGNET
+	.2byte ITEM_SHARP_BEAK
+	.2byte ITEM_BLACK_BELT
+	.2byte ITEM_SILK_SCARF
+	.2byte ITEM_TWISTED_SPOON
+	.2byte ITEM_NEVER_MELT_ICE
+	.2byte ITEM_POISON_BARB
+	.2byte ITEM_SPELL_TAG
+	.2byte ITEM_BLACK_GLASSES
+	.2byte ITEM_SOFT_SAND
+	.2byte ITEM_HARD_STONE
 	.2byte ITEM_NONE
 	release
 	end
