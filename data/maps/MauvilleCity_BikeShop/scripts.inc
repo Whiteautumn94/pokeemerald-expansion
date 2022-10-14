@@ -318,3 +318,12 @@ MauvilleCity_BikeShop_Text_Jumps:
 	.string "change directions while jumping.\p"
 	.string "Want to read a different page?$"
 
+
+MauvilleCity_BikeShop_EventScript_TownSign::
+	msgbox MauvilleCity_BikeShop_Text_TownSign, MSGBOX_SIGN
+	end
+
+
+MauvilleCity_BikeShop_Text_TownSign::
+	.string "This Bike shop is closing.\n"
+	.string "Find a couple bikes, their yours.$"

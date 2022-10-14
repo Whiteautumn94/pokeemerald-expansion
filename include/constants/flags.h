@@ -85,10 +85,10 @@
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_RECEIVED_ACRO_BIKE    0x4C // Unused Flag
+#define FLAG_RECEIVED_MACH_BIKE    0x4D // Unused Flag
+#define FLAG_RECEIVED_Eevee    0x4E // Unused Flag
+#define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_Eevee_POKEBALL    0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50

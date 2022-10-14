@@ -143,3 +143,14 @@ Route112_Text_RouteSignLavaridge:
 	.string "ROUTE 112\n"
 	.string "{LEFT_ARROW} LAVARIDGE TOWN$"
 
+Route112_EventScript_WaterStarters::
+    lockall
+	faceplayer
+	msgbox Route112_Text_WaterStarters MSGBOX_NPC
+	end
+
+Route112_Text_WaterStarters:
+    .string "I heard there's a place nearby\n"
+	.string "that has water starter pokemon\l"
+	.string "from all over the world!$"
+
