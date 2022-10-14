@@ -657,3 +657,15 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+Slateport_EventScript_ItemMegaRing::
+    finditem ITEM_MEGA_RING
+	end
+
+RustboroCity_EventScript_ItemDYNAMAXBAND::
+    finditem ITEM_DYNAMAX_BAND
+	end
+
+LittlerootTown_EventScript_ItemPowerRing::
+    finditem ITEM_Z_POWER_RING
+	end
