@@ -2100,7 +2100,7 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
             AddTextPrinterParameterized4(confirmWindowId, FONT_SMALL, mainOffset, 1, 0, 0, sFontColorTable[0], TEXT_SKIP_DRAW, gMenuText_Confirm);
             PutWindowTilemap(confirmWindowId);
             CopyWindowToVram(confirmWindowId, COPYWIN_GFX);
-            cancelWindowId = AddWindow(&sMultiCancelButtonWindowTemplate);
+            cancelWindowId = AddWindow(&sMultiCancelButtonWindowTemplate_equal);
             offset = 0;
         }
         else
@@ -2286,14 +2286,14 @@ static void DisplayPartyPokemonLevelCheck(struct Pokemon *mon, struct PartyMenuB
 {
     if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
     {
-        u8 ailment = GetMonAilment(mon);
-        if (ailment == AILMENT_NONE || ailment == AILMENT_PKRS)
-        {
+        //u8 ailment = GetMonAilment(mon);
+        //if (ailment == AILMENT_NONE || ailment == AILMENT_PKRS)
+        //{
             if (c != 0)
                 menuBox->infoRects->blitFunc(menuBox->windowId, menuBox->infoRects->dimensions[4] >> 3, (menuBox->infoRects->dimensions[5] >> 3) + 1, menuBox->infoRects->dimensions[6] >> 3, menuBox->infoRects->dimensions[7] >> 3, FALSE);
             if (c != 2)
                 DisplayPartyPokemonLevel(GetMonData(mon, MON_DATA_LEVEL), menuBox);
-        }
+        //}
     }
 }
 
@@ -2441,9 +2441,9 @@ static void DisplayPartyPokemonDescriptionText(u8 stringID, struct PartyMenuBox 
 {
     if (c)
     {
-        int width = ((menuBox->infoRects->descTextLeft % 8) + menuBox->infoRects->descTextWidth + 7) / 8;
-        int height = ((menuBox->infoRects->descTextTop % 8) + menuBox->infoRects->descTextHeight + 7) / 8;
-        menuBox->infoRects->blitFunc(menuBox->windowId, menuBox->infoRects->descTextLeft >> 3, menuBox->infoRects->descTextTop >> 3, width, height, TRUE);
+        int width = ((menuBox->infoRects->descTextLeft % 8) + menuBox->infoRects->descTextWidth + 7) / 8 - 1;
+        int height = ((menuBox->infoRects->descTextTop % 8) + menuBox->infoRects->descTextHeight + 7) / 8 - 1;
+        menuBox->infoRects->blitFunc(menuBox->windowId, menuBox->infoRects->descTextLeft >> 3, (menuBox->infoRects->descTextTop >> 3)+1, width, height, TRUE);
     }
     if (c != 2)
         AddTextPrinterParameterized3(menuBox->windowId, FONT_NORMAL, menuBox->infoRects->descTextLeft, menuBox->infoRects->descTextTop, sFontColorTable[0], 0, sDescriptionStringTable[stringID]);
@@ -4446,8 +4446,8 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
             PlaySE(SE_GLASS_FLUTE);
         }
         SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
-        if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
-            DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
+        //if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
+        DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
         if (canHeal == TRUE)
         {
             if (hp == 0)
@@ -5435,8 +5435,8 @@ static void UseSacredAsh(u8 taskId)
 
     PlaySE(SE_USE_ITEM);
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
-    if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
-        DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
+    //if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
+    DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
     AnimatePartySlot(sPartyMenuInternal->tLastSlotUsed, 0);
     AnimatePartySlot(gPartyMenu.slotId, 1);
     PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_SacredAshDisplayHPRestored);
