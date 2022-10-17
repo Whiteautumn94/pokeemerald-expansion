@@ -117,9 +117,9 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_RIOLU,
-    SPECIES_MAGBY,
-    SPECIES_ELEKID,
+    SPECIES_DEINO,
+    SPECIES_DREEPY,
+    SPECIES_AXEW,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -635,7 +635,7 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
 {
     u8 spriteId;
 
-    spriteId = CreateMonPicSprite_Affine(species, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    spriteId = CreateMonPicSprite_Affine(species, SHINY_ODDS, 2, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }
