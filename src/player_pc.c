@@ -224,9 +224,9 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 
 static const struct ItemSlot sNewGamePCItems[] =
 {
-    { ITEM_ULTRA_BALL, 5 },
-    { ITEM_GREAT_BALL, 10},
-    { ITEM_POKE_BALL, 15},
+    { ITEM_ULTRA_BALL, 30},
+    { ITEM_GREAT_BALL, 30},
+    { ITEM_POKE_BALL, 30},
     { ITEM_LUCKY_EGG, 1},
     { ITEM_NONE, 0 }
 };
