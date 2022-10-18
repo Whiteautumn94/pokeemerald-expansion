@@ -1,5 +1,3 @@
-.set LOCALID_Eevee_BALL, 1
-
 OldaleTown_House1_MapScripts::
 	.byte 0
 
@@ -15,7 +13,6 @@ OldaleTown_House1_Text_LeftPokemonGoesOutFirst:
 	.string "of your POKéMON.\p"
 	.string "It could give you an advantage.$"
 
-OldaleTown_House1_MapScripts_GiveEevee::
 
 OlddaleTown_House1_EventScript_GiveEevee::
     setvar VAR_TEMP_1, SPECIES_EEVEE
@@ -48,13 +45,13 @@ OlddaleTown_House1_EventScript_EeveeTransferredToPC::
 	end
 
 OlddaleTown_House1_EventScript_ReceivedEeveeFanfare::
-	bufferspeciesname STR_VAR_2, SPECIES_EEVEE
+	bufferspeciesname STR_VAR_2, SPECIES_Eevee
 	removeobject LOCALID_Eevee_BALL
 	playfanfare MUS_OBTAIN_ITEM
 	message OlddaleTown_House1_Text_ObtainedEevee
 	waitmessage
 	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
+	bufferspeciesname STR_VAR_1, SPECIES_Eevee
 	return
 
 OlddaleTown_House1_EventScript_ReceivedEevee::
@@ -62,6 +59,3 @@ OlddaleTown_House1_EventScript_ReceivedEevee::
 	setflag FLAG_RECEIVED_Eevee
 	releaseall
 	end
-
-OlddaleTown_House1_Text_ObtainedEevee:
-	.string "{PLAYER} obtained a EEVEE.$"
