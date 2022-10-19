@@ -1,3 +1,5 @@
+.set LOCALID_Eevee_BALL, 1
+
 OldaleTown_House1_MapScripts::
 	.byte 0
 
@@ -45,17 +47,30 @@ OlddaleTown_House1_EventScript_EeveeTransferredToPC::
 	end
 
 OlddaleTown_House1_EventScript_ReceivedEeveeFanfare::
-	bufferspeciesname STR_VAR_2, SPECIES_Eevee
+	bufferspeciesname STR_VAR_2, SPECIES_EEVEE
 	removeobject LOCALID_Eevee_BALL
 	playfanfare MUS_OBTAIN_ITEM
 	message OlddaleTown_House1_Text_ObtainedEevee
 	waitmessage
 	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_Eevee
+	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	return
 
 OlddaleTown_House1_EventScript_ReceivedEevee::
+    setflag FLAG_RECEIVED_Eevee
 	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_Eevee_POKEBALL
-	setflag FLAG_RECEIVED_Eevee
-	releaseall
+    releaseall
 	end
+
+	OlddaleTown_House1_Text_TakeBallContainingEevee:
+	.string "{PLAYER} checked the POKé BALL.\p"
+	.string "It contained the POKéMON\n"
+	.string "EEVEE.\p"
+	.string "Take the POKé BALL?$"
+
+    OlddaleTown_House1_Text_ObtainedEevee:
+	.string "{PLAYER} obtained a EEVEE.$"
+
+    OlddaleTown_House1_Text_LeftPokeBallWhereItWas:
+	.string "{PLAYER} left the POKé BALL where\n"
+	.string "it was.$"
